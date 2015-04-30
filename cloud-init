@@ -1,0 +1,160 @@
+#cloud-config
+
+write_files:
+- path: /etc/aws.conf
+  owner: root
+  content: |
+    [Global]
+- path: /opt/bin/consume-tokens.sh
+  owner: root
+  permissions: 0755
+  content: |
+    #! /usr/bin/bash
+    umask go= 
+    mkdir -p /var/lib/kubelet
+    mkdir -p /var/lib/kube-proxy
+    kubelet_token=$(etcdctl get /k8s/tokens/kubelet)
+    kube_proxy_token=$(etcdctl get /k8s/tokens/kube_proxy)
+    kubelet_auth_file=/var/lib/kubelet/kubernetes_auth
+    kube_proxy_kubeconfig_file=/var/lib/kube-proxy/kubeconfig
+    echo "{ \"BearerToken\": \"$kubelet_token\", \"Insecure\": true }" > $kubelet_auth_file
+    cat > "${kube_proxy_kubeconfig_file}" <<EOF
+    apiVersion: v1
+    kind: Config
+    users:
+    - name: kube-proxy
+      user:
+        token: ${kube_proxy_token}
+    clusters:
+    - name: local
+      cluster:
+         insecure-skip-tls-verify: true
+    contexts:
+    - context:
+        cluster: local
+        user: kube-proxy
+      name: service-account-context
+    current-context: service-account-context
+    EOF
+coreos:
+  etcd2:
+    proxy: on
+    initial-cluster: kubernetes=http://10.0.21.79:2380
+    listen-peer-urls: http://localhost:2380
+    initial-advertise-peer-urls: http://localhost:2380
+    listen-client-urls: http://localhost:2379
+    advertise-client-urls: http://localhost:2379
+  fleet:
+    etcd_servers: http://localhost:2379
+    metadata: k8srole=node
+  flannel:
+    etcd_endpoints: http://localhost:2379
+  locksmithd:
+    endpoint: http://localhost:2379
+  units:
+    - name: etcd2.service
+      command: start
+    - name: fleet.service
+      command: start
+      drop-ins:
+        - name: 10-wait-etcd2.conf
+          content: |
+            [Service]
+            ExecStartPre=/usr/bin/bash -c "until curl -s http://localhost:2379/v2/machines -o /dev/null; do sleep 3; done"
+    - name: flanneld.service
+      command: start
+      drop-ins:
+        - name: 10-wait-etcd2.conf
+          content: |
+            [Service]
+            ExecStartPre=/usr/bin/bash -c "until curl -s http://localhost:2379/v2/machines -o /dev/null; do sleep 3; done"
+    - name: locksmithd.service
+      drop-ins:
+        - name: 10-wait-etcd2.conf
+          content: |
+            [Service]
+            ExecStartPre=/usr/bin/bash -c "until curl -s http://localhost:2379/v2/machines -o /dev/null; do sleep 3; done"
+    - name: docker.service
+      command: start
+      content: |
+        [Unit]
+        After=flanneld.service
+        Wants=flanneld.service
+        Description=Docker Application Container Engine
+        Documentation=http://docs.docker.io
+
+        [Service]
+        EnvironmentFile=/var/run/flannel/subnet.env
+        ExecStartPre=/bin/mount --make-rprivate /
+        ExecStart=/usr/bin/docker -d --bip=${FLANNEL_SUBNET} --mtu=${FLANNEL_MTU} -s=overlay -H fd://
+
+        [Install]
+        WantedBy=multi-user.target
+    - name: consume-k8s-tokens.service
+      command: start
+      content: |
+        [Unit]
+        Description=Consume Kubernetes API Server token
+        Documentation=https://github.com/GoogleCloudPlatform/kubernetes/blob/master/cluster/aws/templates/create-dynamic-salt-files.sh
+        [Service]
+        ExecStartPre=/usr/bin/bash -c "until etcdctl ls /k8s/tokens/kube_proxy 2>/dev/null; do sleep 3; done"
+        ExecStart=/opt/bin/consume-tokens.sh
+        Type=oneshot
+        RemainAfterExit=true
+    - name: provision-k8s-secrets.service
+      command: start
+      content: |
+        [Unit]
+        Description=Provision Kubernetes secrets from S3
+        Documentation=https://github.com/ktheory/docker-s3-sync
+        Requires=network-online.target
+        After=network-online.target
+
+        [Service]
+        ExecStart=/usr/bin/docker run --rm -e S3_KEY=kubelet/.dockercfg -e DESTINATION=/out/.dockercfg -e S3_BUCKET=kubernetes-secrets -e MODE=600 -v /var/lib/kubelet:/out ktheory/docker-s3-sync bash -c "sleep 1; /sync.sh"
+        Type=oneshot
+        RemainAfterExit=true
+    - name: kubelet.service
+      command: start
+      content: |
+        [Unit]
+        Description=Kubernetes Kubelet
+        Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+        Requires=consume-k8s-tokens.service provision-k8s-secrets.service
+        After=consume-k8s-tokens.service provision-k8s-secrets.service
+
+        [Service]
+        ExecStartPre=/usr/bin/wget -q -N -P /opt/bin https://storage.googleapis.com/kubernetes-release/release/v0.16.0/bin/linux/amd64/kubelet
+        ExecStartPre=/usr/bin/chmod +x /opt/bin/kubelet
+        ExecStart=/opt/bin/kubelet \
+        --api_servers=https://10.0.21.79:6443 \
+        --config=/etc/kubernetes/manifests \
+        --cloud_provider=aws \
+        --cloud_config=/etc/aws.conf \
+        --cluster_dns=10.122.0.10 \
+        --cluster_domain=kubernetes.local \
+        --maximum_dead_containers=5 \
+        --v=2
+        Restart=always
+        RestartSec=10
+    - name: kube-proxy.service
+      command: start
+      content: |
+        [Unit]
+        Description=Kubernetes Proxy
+        Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+        Requires=consume-k8s-tokens.service
+        After=consume-k8s-tokens.service
+
+        [Service]
+        ExecStartPre=/usr/bin/wget -q -N -P /opt/bin https://storage.googleapis.com/kubernetes-release/release/v0.16.0/bin/linux/amd64/kube-proxy
+        ExecStartPre=/usr/bin/chmod +x /opt/bin/kube-proxy
+        ExecStart=/opt/bin/kube-proxy \
+        --master=https://10.0.21.79:6443 \
+        --kubeconfig=/var/lib/kube-proxy/kubeconfig \
+        --v=2
+        Restart=always
+        RestartSec=10
+  update:
+    group: alpha
+    reboot-strategy: off
