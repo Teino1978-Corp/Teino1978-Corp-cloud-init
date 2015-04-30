@@ -1,0 +1,896 @@
+-- Reboot --
+[    1.625358] localhost systemd-journal[158]: Runtime journal is using 8.0M (max allowed 197.7M, trying to leave 296.6M free of 1.9G available → current limit 197.7M).
+[    1.625463] localhost systemd-journal[158]: Runtime journal is using 8.0M (max allowed 197.7M, trying to leave 296.6M free of 1.9G available → current limit 197.7M).
+[    0.000000] localhost kernel: Initializing cgroup subsys cpuset
+[    0.000000] localhost kernel: Initializing cgroup subsys cpu
+[    0.000000] localhost kernel: Initializing cgroup subsys cpuacct
+[    0.000000] localhost kernel: Linux version 4.0.0 (buildbot@ip-10-204-3-57) (gcc version 4.8.3 (Gentoo Hardened 4.8.3 p1.1, pie-0.5.9) ) #2 SMP Wed Apr 22 23:43:22 UTC 2015
+[    0.000000] localhost kernel: Command line: BOOT_IMAGE=/boot/vmlinuz console=ttyS0,115200n8 console=tty0 root=LABEL=ROOT mount.usr=PARTUUID=7130c94a-213a-4e5a-8e26-6cce9662f132
+[    0.000000] localhost kernel: e820: BIOS-provided physical RAM map:
+[    0.000000] localhost kernel: BIOS-e820: [mem 0x0000000000000000-0x000000000009dfff] usable
+[    0.000000] localhost kernel: BIOS-e820: [mem 0x000000000009e000-0x000000000009ffff] reserved
+[    0.000000] localhost kernel: BIOS-e820: [mem 0x00000000000e0000-0x00000000000fffff] reserved
+[    0.000000] localhost kernel: BIOS-e820: [mem 0x0000000000100000-0x00000000efffffff] usable
+[    0.000000] localhost kernel: BIOS-e820: [mem 0x00000000fc000000-0x00000000ffffffff] reserved
+[    0.000000] localhost kernel: BIOS-e820: [mem 0x0000000100000000-0x000000010fffffff] usable
+[    0.000000] localhost kernel: NX (Execute Disable) protection: active
+[    0.000000] localhost kernel: SMBIOS 2.4 present.
+[    0.000000] localhost kernel: DMI: Xen HVM domU, BIOS 4.2.amazon 12/03/2014
+[    0.000000] localhost kernel: Hypervisor detected: Xen HVM
+[    0.000000] localhost kernel: Xen version 4.2.
+[    0.000000] localhost kernel: Xen Platform PCI: I/O protocol version 1
+[    0.000000] localhost kernel: Netfront and the Xen platform PCI driver have been compiled for this kernel: unplug emulated NICs.
+[    0.000000] localhost kernel: Blkfront and the Xen platform PCI driver have been compiled for this kernel: unplug emulated disks.
+                                 You might have to change the root device
+                                 from /dev/hd[a-d] to /dev/xvd[a-d]
+                                 in your root= kernel command line option
+[    0.000000] localhost kernel: HVMOP_pagetable_dying not supported
+[    0.000000] localhost kernel: e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.000000] localhost kernel: e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.000000] localhost kernel: AGP: No AGP bridge found
+[    0.000000] localhost kernel: e820: last_pfn = 0x110000 max_arch_pfn = 0x400000000
+[    0.000000] localhost kernel: MTRR default type: write-back
+[    0.000000] localhost kernel: MTRR fixed ranges enabled:
+[    0.000000] localhost kernel:   00000-9FFFF write-back
+[    0.000000] localhost kernel:   A0000-BFFFF write-combining
+[    0.000000] localhost kernel:   C0000-FFFFF write-back
+[    0.000000] localhost kernel: MTRR variable ranges enabled:
+[    0.000000] localhost kernel:   0 base 0000F0000000 mask 3FFFF8000000 uncachable
+[    0.000000] localhost kernel:   1 base 0000F8000000 mask 3FFFFC000000 uncachable
+[    0.000000] localhost kernel:   2 disabled
+[    0.000000] localhost kernel:   3 disabled
+[    0.000000] localhost kernel:   4 disabled
+[    0.000000] localhost kernel:   5 disabled
+[    0.000000] localhost kernel:   6 disabled
+[    0.000000] localhost kernel:   7 disabled
+[    0.000000] localhost kernel: PAT configuration [0-7]: WB  WC  UC- UC  WB  WC  UC- UC  
+[    0.000000] localhost kernel: e820: last_pfn = 0xf0000 max_arch_pfn = 0x400000000
+[    0.000000] localhost kernel: Base memory trampoline at [ffff880000098000] 98000 size 24576
+[    0.000000] localhost kernel: init_memory_mapping: [mem 0x00000000-0x000fffff]
+[    0.000000] localhost kernel:  [mem 0x00000000-0x000fffff] page 4k
+[    0.000000] localhost kernel: BRK [0x0318a000, 0x0318afff] PGTABLE
+[    0.000000] localhost kernel: BRK [0x0318b000, 0x0318bfff] PGTABLE
+[    0.000000] localhost kernel: BRK [0x0318c000, 0x0318cfff] PGTABLE
+[    0.000000] localhost kernel: init_memory_mapping: [mem 0x10fe00000-0x10fffffff]
+[    0.000000] localhost kernel:  [mem 0x10fe00000-0x10fffffff] page 2M
+[    0.000000] localhost kernel: BRK [0x0318d000, 0x0318dfff] PGTABLE
+[    0.000000] localhost kernel: init_memory_mapping: [mem 0x100000000-0x10fdfffff]
+[    0.000000] localhost kernel:  [mem 0x100000000-0x10fdfffff] page 2M
+[    0.000000] localhost kernel: init_memory_mapping: [mem 0xe0000000-0xefffffff]
+[    0.000000] localhost kernel:  [mem 0xe0000000-0xefffffff] page 2M
+[    0.000000] localhost kernel: BRK [0x0318e000, 0x0318efff] PGTABLE
+[    0.000000] localhost kernel: init_memory_mapping: [mem 0x00100000-0xdfffffff]
+[    0.000000] localhost kernel:  [mem 0x00100000-0x001fffff] page 4k
+[    0.000000] localhost kernel:  [mem 0x00200000-0xdfffffff] page 2M
+[    0.000000] localhost kernel: ACPI: Early table checksum verification disabled
+[    0.000000] localhost kernel: ACPI: RSDP 0x00000000000EA020 000024 (v02 Xen   )
+[    0.000000] localhost kernel: ACPI: XSDT 0x00000000FC00F710 00005C (v01 Xen    HVM      00000000 HVML 00000000)
+[    0.000000] localhost kernel: ACPI: FACP 0x00000000FC00F260 0000F4 (v04 Xen    HVM      00000000 HVML 00000000)
+[    0.000000] localhost kernel: ACPI: DSDT 0x00000000FC0035E0 00BBF6 (v02 Xen    HVM      00000000 INTL 20090123)
+[    0.000000] localhost kernel: ACPI: FACS 0x00000000FC0035A0 000040
+[    0.000000] localhost kernel: ACPI: APIC 0x00000000FC00F360 0000D8 (v02 Xen    HVM      00000000 HVML 00000000)
+[    0.000000] localhost kernel: ACPI: SRAT 0x00000000FC00F4B0 000170 (v01 Xen    HVM      00000000 HVML 00000000)
+[    0.000000] localhost kernel: ACPI: HPET 0x00000000FC00F620 000038 (v01 Xen    HVM      00000000 HVML 00000000)
+[    0.000000] localhost kernel: ACPI: WAET 0x00000000FC00F660 000028 (v01 Xen    HVM      00000000 HVML 00000000)
+[    0.000000] localhost kernel: ACPI: SSDT 0x00000000FC00F690 000031 (v02 Xen    HVM      00000000 INTL 20090123)
+[    0.000000] localhost kernel: ACPI: SSDT 0x00000000FC00F6D0 000031 (v02 Xen    HVM      00000000 INTL 20090123)
+[    0.000000] localhost kernel: ACPI: Local APIC address 0xfee00000
+[    0.000000] localhost kernel: SRAT: PXM 0 -> APIC 0x00 -> Node 0
+[    0.000000] localhost kernel: SRAT: PXM 0 -> APIC 0x02 -> Node 0
+[    0.000000] localhost kernel: SRAT: Node 0 PXM 0 [mem 0x00000000-0xefffffff]
+[    0.000000] localhost kernel: NUMA: Warning: invalid memblk node 0 [mem 0x100000000-0x0fffffff]
+[    0.000000] localhost kernel: SRAT: Node 0 PXM 0 [mem 0x100000000-0x0fffffff]
+[    0.000000] localhost kernel: NUMA: nodes only cover 3839MB of your 4095MB e820 RAM. Not used.
+[    0.000000] localhost kernel: No NUMA configuration found
+[    0.000000] localhost kernel: Faking a node at [mem 0x0000000000000000-0x000000010fffffff]
+[    0.000000] localhost kernel: NODE_DATA(0) allocated [mem 0x10fff7000-0x10fffdfff]
+[    0.000000] localhost kernel:  [ffffea0000000000-ffffea00043fffff] PMD -> [ffff88010b600000-ffff88010f5fffff] on node 0
+[    0.000000] localhost kernel: Zone ranges:
+[    0.000000] localhost kernel:   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.000000] localhost kernel:   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.000000] localhost kernel:   Normal   [mem 0x0000000100000000-0x000000010fffffff]
+[    0.000000] localhost kernel: Movable zone start for each node
+[    0.000000] localhost kernel: Early memory node ranges
+[    0.000000] localhost kernel:   node   0: [mem 0x0000000000001000-0x000000000009dfff]
+[    0.000000] localhost kernel:   node   0: [mem 0x0000000000100000-0x00000000efffffff]
+[    0.000000] localhost kernel:   node   0: [mem 0x0000000100000000-0x000000010fffffff]
+[    0.000000] localhost kernel: Initmem setup node 0 [mem 0x0000000000001000-0x000000010fffffff]
+[    0.000000] localhost kernel: On node 0 totalpages: 1048477
+[    0.000000] localhost kernel:   DMA zone: 64 pages used for memmap
+[    0.000000] localhost kernel:   DMA zone: 21 pages reserved
+[    0.000000] localhost kernel:   DMA zone: 3997 pages, LIFO batch:0
+[    0.000000] localhost kernel:   DMA32 zone: 15296 pages used for memmap
+[    0.000000] localhost kernel:   DMA32 zone: 978944 pages, LIFO batch:31
+[    0.000000] localhost kernel:   Normal zone: 1024 pages used for memmap
+[    0.000000] localhost kernel:   Normal zone: 65536 pages, LIFO batch:15
+[    0.000000] localhost kernel: ACPI: PM-Timer IO Port: 0xb008
+[    0.000000] localhost kernel: ACPI: Local APIC address 0xfee00000
+[    0.000000] localhost kernel: ACPI: LAPIC (acpi_id[0x00] lapic_id[0x00] enabled)
+[    0.000000] localhost kernel: ACPI: LAPIC (acpi_id[0x01] lapic_id[0x02] enabled)
+[    0.000000] localhost kernel: ACPI: LAPIC (acpi_id[0x02] lapic_id[0x00] disabled)
+[    0.000000] localhost kernel: ACPI: LAPIC (acpi_id[0x03] lapic_id[0x00] disabled)
+[    0.000000] localhost kernel: ACPI: LAPIC (acpi_id[0x04] lapic_id[0x00] disabled)
+[    0.000000] localhost kernel: ACPI: LAPIC (acpi_id[0x05] lapic_id[0x00] disabled)
+[    0.000000] localhost kernel: ACPI: LAPIC (acpi_id[0x06] lapic_id[0x00] disabled)
+[    0.000000] localhost kernel: ACPI: LAPIC (acpi_id[0x07] lapic_id[0x00] disabled)
+[    0.000000] localhost kernel: ACPI: LAPIC (acpi_id[0x08] lapic_id[0x00] disabled)
+[    0.000000] localhost kernel: ACPI: LAPIC (acpi_id[0x09] lapic_id[0x00] disabled)
+[    0.000000] localhost kernel: ACPI: LAPIC (acpi_id[0x0a] lapic_id[0x00] disabled)
+[    0.000000] localhost kernel: ACPI: LAPIC (acpi_id[0x0b] lapic_id[0x00] disabled)
+[    0.000000] localhost kernel: ACPI: LAPIC (acpi_id[0x0c] lapic_id[0x00] disabled)
+[    0.000000] localhost kernel: ACPI: LAPIC (acpi_id[0x0d] lapic_id[0x00] disabled)
+[    0.000000] localhost kernel: ACPI: LAPIC (acpi_id[0x0e] lapic_id[0x00] disabled)
+[    0.000000] localhost kernel: ACPI: IOAPIC (id[0x01] address[0xfec00000] gsi_base[0])
+[    0.000000] localhost kernel: IOAPIC[0]: apic_id 1, version 17, address 0xfec00000, GSI 0-47
+[    0.000000] localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.000000] localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 low level)
+[    0.000000] localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 low level)
+[    0.000000] localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 low level)
+[    0.000000] localhost kernel: ACPI: IRQ0 used by override.
+[    0.000000] localhost kernel: ACPI: IRQ5 used by override.
+[    0.000000] localhost kernel: ACPI: IRQ9 used by override.
+[    0.000000] localhost kernel: ACPI: IRQ10 used by override.
+[    0.000000] localhost kernel: ACPI: IRQ11 used by override.
+[    0.000000] localhost kernel: Using ACPI (MADT) for SMP configuration information
+[    0.000000] localhost kernel: ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    0.000000] localhost kernel: smpboot: Allowing 15 CPUs, 13 hotplug CPUs
+[    0.000000] localhost kernel: PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.000000] localhost kernel: PM: Registered nosave memory: [mem 0x0009e000-0x0009ffff]
+[    0.000000] localhost kernel: PM: Registered nosave memory: [mem 0x000a0000-0x000dffff]
+[    0.000000] localhost kernel: PM: Registered nosave memory: [mem 0x000e0000-0x000fffff]
+[    0.000000] localhost kernel: PM: Registered nosave memory: [mem 0xf0000000-0xfbffffff]
+[    0.000000] localhost kernel: PM: Registered nosave memory: [mem 0xfc000000-0xffffffff]
+[    0.000000] localhost kernel: e820: [mem 0xf0000000-0xfbffffff] available for PCI devices
+[    0.000000] localhost kernel: Booting paravirtualized kernel on Xen HVM
+[    0.000000] localhost kernel: setup_percpu: NR_CPUS:128 nr_cpumask_bits:128 nr_cpu_ids:15 nr_node_ids:1
+[    0.000000] localhost kernel: PERCPU: Embedded 30 pages/cpu @ffff88010fc00000 s85336 r8192 d29352 u131072
+[    0.000000] localhost kernel: pcpu-alloc: s85336 r8192 d29352 u131072 alloc=1*2097152
+[    0.000000] localhost kernel: pcpu-alloc: [0] 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 -- 
+[    0.000000] localhost kernel: xen: PV spinlocks enabled
+[    0.000000] localhost kernel: Built 1 zonelists in Node order, mobility grouping on.  Total pages: 1032072
+[    0.000000] localhost kernel: Policy zone: Normal
+[    0.000000] localhost kernel: Kernel command line: init=/usr/lib/systemd/systemd BOOT_IMAGE=/boot/vmlinuz console=ttyS0,115200n8 console=tty0 root=LABEL=ROOT mount.usr=PARTUUID=7130c94a-213a-4e5a-8e26-6cce9662f132
+[    0.000000] localhost kernel: PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] localhost kernel: xsave: enabled xstate_bv 0x7, cntxt size 0x340 using standard form
+[    0.000000] localhost kernel: AGP: Checking aperture...
+[    0.000000] localhost kernel: AGP: No AGP bridge found
+[    0.000000] localhost kernel: Memory: 4025784K/4193908K available (5197K kernel code, 914K rwdata, 2332K rodata, 22240K init, 912K bss, 168124K reserved, 0K cma-reserved)
+[    0.000000] localhost kernel: SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=15, Nodes=1
+[    0.000000] localhost kernel: Hierarchical RCU implementation.
+[    0.000000] localhost kernel:         RCU restricting CPUs from NR_CPUS=128 to nr_cpu_ids=15.
+[    0.000000] localhost kernel: RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=15
+[    0.000000] localhost kernel: NR_IRQS:8448 nr_irqs:952 16
+[    0.000000] localhost kernel: xen:events: Using 2-level ABI
+[    0.000000] localhost kernel: xen:events: Xen HVM callback vector for event delivery is enabled
+[    0.000000] localhost kernel: Console: colour VGA+ 80x25
+[    0.000000] localhost kernel: console [tty0] enabled
+[    0.000000] localhost kernel: console [ttyS0] enabled
+[    0.000000] localhost kernel: hpet clockevent registered
+[    0.000000] localhost kernel: tsc: Detected 2500.084 MHz processor
+[    0.005000] localhost kernel: Calibrating delay loop (skipped), value calculated using timer frequency.. 5000.16 BogoMIPS (lpj=2500084)
+[    0.015003] localhost kernel: pid_max: default: 32768 minimum: 301
+[    0.021011] localhost kernel: ACPI: Core revision 20150204
+[    0.031483] localhost kernel: ACPI: All ACPI Tables successfully acquired
+[    0.044260] localhost kernel: Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+[    0.052807] localhost kernel: Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+[    0.067387] localhost kernel: Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.074011] localhost kernel: Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.081185] localhost kernel: Initializing cgroup subsys blkio
+[    0.085005] localhost kernel: Initializing cgroup subsys memory
+[    0.089011] localhost kernel: Initializing cgroup subsys devices
+[    0.092007] localhost kernel: Initializing cgroup subsys freezer
+[    0.096005] localhost kernel: Initializing cgroup subsys net_cls
+[    0.099004] localhost kernel: Initializing cgroup subsys perf_event
+[    0.104006] localhost kernel: Initializing cgroup subsys net_prio
+[    0.107064] localhost kernel: CPU: Physical Processor ID: 0
+[    0.110002] localhost kernel: CPU: Processor Core ID: 0
+[    0.114664] localhost kernel: mce: CPU supports 2 MCE banks
+[    0.118024] localhost kernel: Last level iTLB entries: 4KB 512, 2MB 8, 4MB 8
+[    0.122002] localhost kernel: Last level dTLB entries: 4KB 512, 2MB 0, 4MB 0, 1GB 4
+[    0.128051] localhost kernel: Freeing SMP alternatives memory: 20K (ffffffff8309e000 - ffffffff830a3000)
+[    0.137583] localhost kernel: ftrace: allocating 20025 entries in 79 pages
+[    0.164677] localhost kernel: x2apic: IRQ remapping doesn't support X2APIC mode
+[    0.169003] localhost kernel: Switched APIC routing to physical flat.
+[    0.176417] localhost kernel: ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=0 pin2=0
+[    0.191207] localhost kernel: Xen: using vcpuop timer interface
+[    0.191215] localhost kernel: installing Xen timer for CPU 0
+[    0.195061] localhost kernel: smpboot: CPU0: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz (fam: 06, model: 3e, stepping: 04)
+[    0.199030] localhost kernel: cpu 0 spinlock event irq 53
+[    0.203552] localhost kernel: Performance Events: unsupported p6 CPU model 62 no PMU driver, software events only.
+[    0.206539] localhost kernel: NMI watchdog: disabled (cpu0): hardware events not enabled
+[    0.207078] localhost kernel: installing Xen timer for CPU 1
+[    0.208069] localhost kernel: x86: Booting SMP configuration:
+[    0.209007] localhost kernel: .... node  #0, CPUs:        #1cpu 1 spinlock event irq 59
+[    0.224032] localhost kernel: x86: Booted up 1 node, 2 CPUs
+[    0.225007] localhost kernel: smpboot: Total of 2 processors activated (10000.33 BogoMIPS)
+[    0.226469] localhost kernel: devtmpfs: initialized
+[    0.232136] localhost kernel: pinctrl core: initialized pinctrl subsystem
+[    0.236184] localhost kernel: NET: Registered protocol family 16
+[    0.246008] localhost kernel: cpuidle: using governor ladder
+[    0.252009] localhost kernel: cpuidle: using governor menu
+[    0.253051] localhost kernel: ACPI: bus type PCI registered
+[    0.254010] localhost kernel: acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.255061] localhost kernel: dca service started, version 1.12.1
+[    0.256252] localhost kernel: PCI: Using configuration type 1 for base access
+[    0.262058] localhost kernel: ACPI: Added _OSI(Module Device)
+[    0.263006] localhost kernel: ACPI: Added _OSI(Processor Device)
+[    0.264007] localhost kernel: ACPI: Added _OSI(3.0 _SCP Extensions)
+[    0.265008] localhost kernel: ACPI: Added _OSI(Processor Aggregator Device)
+[    0.267389] localhost kernel: xen: --> pirq=16 -> irq=9 (gsi=9)
+[    0.270254] localhost kernel: ACPI: Interpreter enabled
+[    0.271010] localhost kernel: ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S1_] (20150204/hwxface-580)
+[    0.274007] localhost kernel: ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S2_] (20150204/hwxface-580)
+[    0.277019] localhost kernel: ACPI: (supports S0 S3 S4 S5)
+[    0.278005] localhost kernel: ACPI: Using IOAPIC for interrupt routing
+[    0.279052] localhost kernel: PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.338483] localhost kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.339012] localhost kernel: acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI]
+[    0.340011] localhost kernel: acpi PNP0A03:00: _OSC failed (AE_NOT_FOUND); disabling ASPM
+[    0.341054] localhost kernel: acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+[    0.342813] localhost kernel: acpiphp: Slot [0] registered
+[    0.343879] localhost kernel: acpiphp: Slot [3] registered
+[    0.344505] localhost kernel: acpiphp: Slot [4] registered
+[    0.345331] localhost kernel: acpiphp: Slot [5] registered
+[    0.346421] localhost kernel: acpiphp: Slot [6] registered
+[    0.347314] localhost kernel: acpiphp: Slot [7] registered
+[    0.348321] localhost kernel: acpiphp: Slot [8] registered
+[    0.349332] localhost kernel: acpiphp: Slot [9] registered
+[    0.350279] localhost kernel: acpiphp: Slot [10] registered
+[    0.351319] localhost kernel: acpiphp: Slot [11] registered
+[    0.352298] localhost kernel: acpiphp: Slot [12] registered
+[    0.353425] localhost kernel: acpiphp: Slot [13] registered
+[    0.354770] localhost kernel: acpiphp: Slot [14] registered
+[    0.355339] localhost kernel: acpiphp: Slot [15] registered
+[    0.356408] localhost kernel: acpiphp: Slot [16] registered
+[    0.357480] localhost kernel: acpiphp: Slot [17] registered
+[    0.358297] localhost kernel: acpiphp: Slot [18] registered
+[    0.359311] localhost kernel: acpiphp: Slot [19] registered
+[    0.360408] localhost kernel: acpiphp: Slot [20] registered
+[    0.361325] localhost kernel: acpiphp: Slot [21] registered
+[    0.362320] localhost kernel: acpiphp: Slot [22] registered
+[    0.363425] localhost kernel: acpiphp: Slot [23] registered
+[    0.365000] localhost kernel: acpiphp: Slot [24] registered
+[    0.365803] localhost kernel: acpiphp: Slot [25] registered
+[    0.366782] localhost kernel: acpiphp: Slot [26] registered
+[    0.367954] localhost kernel: acpiphp: Slot [27] registered
+[    0.368665] localhost kernel: acpiphp: Slot [28] registered
+[    0.369445] localhost kernel: acpiphp: Slot [29] registered
+[    0.370366] localhost kernel: acpiphp: Slot [30] registered
+[    0.371317] localhost kernel: acpiphp: Slot [31] registered
+[    0.372323] localhost kernel: PCI host bridge to bus 0000:00
+[    0.373009] localhost kernel: pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.374008] localhost kernel: pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.375006] localhost kernel: pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.376005] localhost kernel: pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.377006] localhost kernel: pci_bus 0000:00: root bus resource [mem 0xf0000000-0xfbffffff window]
+[    0.378152] localhost kernel: pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+[    0.379972] localhost kernel: pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+[    0.382185] localhost kernel: pci 0000:00:01.1: [8086:7010] type 00 class 0x010180
+[    0.383462] localhost kernel: pci 0000:00:01.1: reg 0x20: [io  0xc100-0xc10f]
+[    0.384004] localhost kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+[    0.385008] localhost kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+[    0.386007] localhost kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+[    0.387008] localhost kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+[    0.388681] localhost kernel: pci 0000:00:01.3: [8086:7113] type 00 class 0x068000
+[    0.388716] localhost kernel: * Found PM-Timer Bug on the chipset. Due to workarounds for a bug,
+                                 * this clock source is slow. Consider trying other clock sources
+[    0.390634] localhost kernel: pci 0000:00:01.3: quirk: [io  0xb000-0xb03f] claimed by PIIX4 ACPI
+[    0.392090] localhost kernel: pci 0000:00:02.0: [1013:00b8] type 00 class 0x030000
+[    0.392777] localhost kernel: pci 0000:00:02.0: reg 0x10: [mem 0xf0000000-0xf1ffffff pref]
+[    0.392985] localhost kernel: pci 0000:00:02.0: reg 0x14: [mem 0xf3000000-0xf3000fff]
+[    0.395217] localhost kernel: pci 0000:00:03.0: [5853:0001] type 00 class 0xff8000
+[    0.395590] localhost kernel: pci 0000:00:03.0: reg 0x10: [io  0xc000-0xc0ff]
+[    0.395910] localhost kernel: pci 0000:00:03.0: reg 0x14: [mem 0xf2000000-0xf2ffffff pref]
+[    0.399877] localhost kernel: ACPI: PCI Interrupt Link [LNKA] (IRQs *5 10 11)
+[    0.403259] localhost kernel: ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *10 11)
+[    0.407236] localhost kernel: ACPI: PCI Interrupt Link [LNKC] (IRQs 5 10 *11)
+[    0.411210] localhost kernel: ACPI: PCI Interrupt Link [LNKD] (IRQs *5 10 11)
+[    0.435135] localhost kernel: ACPI: Enabled 2 GPEs in block 00 to 0F
+[    0.436052] localhost kernel: xen:balloon: Initialising balloon driver
+[    0.442010] localhost kernel: xen_balloon: Initialising balloon driver
+[    0.443055] localhost kernel: init_memory_mapping: [mem 0x110000000-0x117ffffff]
+[    0.443057] localhost kernel: vgaarb: setting as boot device: PCI:0000:00:02.0
+[    0.443059] localhost kernel: vgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none
+[    0.443060] localhost kernel: vgaarb: loaded
+[    0.443060] localhost kernel: vgaarb: bridge control possible 0000:00:02.0
+[    0.443093] localhost kernel: PCI: Using ACPI for IRQ routing
+[    0.443095] localhost kernel: PCI: pci_cache_line_size set to 64 bytes
+[    0.443605] localhost kernel: e820: reserve RAM buffer [mem 0x0009e000-0x0009ffff]
+[    0.443774] localhost kernel: HPET: 3 timers in total, 0 timers will be used for per-cpu timer
+[    0.443794] localhost kernel: hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[    0.443795] localhost kernel: hpet0: 3 comparators, 64-bit 62.500000 MHz counter
+[    0.480006] localhost kernel:  [mem 0x110000000-0x117ffffff] page 2M
+[    0.481033] localhost kernel: Switched to clocksource xen
+[    0.488933] localhost kernel: pnp: PnP ACPI init
+[    0.492124] localhost kernel: system 00:00: [mem 0x00000000-0x0009ffff] could not be reserved
+[    0.498463] localhost kernel: system 00:00: Plug and Play ACPI device, IDs PNP0c02 (active)
+[    0.498540] localhost kernel: system 00:01: [io  0x08a0-0x08a3] has been reserved
+[    0.503262] localhost kernel: system 00:01: [io  0x0cc0-0x0ccf] has been reserved
+[    0.509093] localhost kernel: system 00:01: [io  0x04d0-0x04d1] has been reserved
+[    0.514331] localhost kernel: system 00:01: Plug and Play ACPI device, IDs PNP0c02 (active)
+[    0.514368] localhost kernel: xen: --> pirq=17 -> irq=8 (gsi=8)
+[    0.514382] localhost kernel: pnp 00:02: Plug and Play ACPI device, IDs PNP0b00 (active)
+[    0.514415] localhost kernel: xen: --> pirq=18 -> irq=12 (gsi=12)
+[    0.514428] localhost kernel: pnp 00:03: Plug and Play ACPI device, IDs PNP0f13 (active)
+[    0.514448] localhost kernel: xen: --> pirq=19 -> irq=1 (gsi=1)
+[    0.514459] localhost kernel: pnp 00:04: Plug and Play ACPI device, IDs PNP0303 PNP030b (active)
+[    0.514476] localhost kernel: xen: --> pirq=20 -> irq=6 (gsi=6)
+[    0.514479] localhost kernel: pnp 00:05: [dma 2]
+[    0.514490] localhost kernel: pnp 00:05: Plug and Play ACPI device, IDs PNP0700 (active)
+[    0.514515] localhost kernel: xen: --> pirq=21 -> irq=4 (gsi=4)
+[    0.514525] localhost kernel: pnp 00:06: Plug and Play ACPI device, IDs PNP0501 (active)
+[    0.514563] localhost kernel: system 00:07: [io  0x10c0-0x1141] has been reserved
+[    0.519835] localhost kernel: system 00:07: [io  0xb044-0xb047] has been reserved
+[    0.525669] localhost kernel: system 00:07: Plug and Play ACPI device, IDs PNP0c02 (active)
+[    0.546752] localhost kernel: pnp: PnP ACPI: found 8 devices
+[    0.558331] localhost kernel: pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    0.558334] localhost kernel: pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    0.558335] localhost kernel: pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    0.558337] localhost kernel: pci_bus 0000:00: resource 7 [mem 0xf0000000-0xfbffffff window]
+[    0.558367] localhost kernel: NET: Registered protocol family 2
+[    0.562901] localhost kernel: TCP established hash table entries: 32768 (order: 6, 262144 bytes)
+[    0.570343] localhost kernel: TCP bind hash table entries: 32768 (order: 7, 524288 bytes)
+[    0.576860] localhost kernel: TCP: Hash tables configured (established 32768 bind 32768)
+[    0.583389] localhost kernel: TCP: reno registered
+[    0.586516] localhost kernel: UDP hash table entries: 2048 (order: 4, 65536 bytes)
+[    0.591889] localhost kernel: UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)
+[    0.598710] localhost kernel: NET: Registered protocol family 1
+[    0.604105] localhost kernel: pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    0.609663] localhost kernel: pci 0000:00:01.0: PIIX3: Enabling Passive Release
+[    0.614597] localhost kernel: pci 0000:00:01.0: Activating ISA DMA hang workarounds
+[    0.619867] localhost kernel: pci 0000:00:02.0: Video device with shadowed ROM
+[    0.619935] localhost kernel: PCI: CLS 0 bytes, default 64
+[    0.921544] localhost kernel: PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    0.928627] localhost kernel: software IO TLB [mem 0xec000000-0xf0000000] (64MB) mapped at [ffff8800ec000000-ffff8800efffffff]
+[    0.938868] localhost kernel: RAPL PMU detected, hw unit 2^-16 Joules, API unit is 2^-32 Joules, 3 fixed counters 163840 ms ovfl timer
+[    0.949205] localhost kernel: futex hash table entries: 4096 (order: 6, 262144 bytes)
+[    0.953987] localhost kernel: Initialise system trusted keyring
+[    0.958296] localhost kernel: HugeTLB registered 2 MB page size, pre-allocated 0 pages
+[    0.964470] localhost kernel: VFS: Disk quotas dquot_6.5.2
+[    0.968371] localhost kernel: VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.974718] localhost kernel: alg: No test for stdrng (krng)
+[    0.978695] localhost kernel: Key type asymmetric registered
+[    0.982205] localhost kernel: Asymmetric key parser 'x509' registered
+[    0.986343] localhost kernel: Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+[    0.992794] localhost kernel: io scheduler noop registered
+[    0.996467] localhost kernel: io scheduler deadline registered
+[    1.000380] localhost kernel: io scheduler cfq registered (default)
+[    1.004277] localhost kernel: pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+[    1.009147] localhost kernel: pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+[    1.014069] localhost kernel: intel_idle: does not run on family 6 model 62
+[    1.014279] localhost kernel: GHES: HEST is not enabled!
+[    1.018172] localhost kernel: ioatdma: Intel(R) QuickData Technology Driver 4.00
+[    1.023592] localhost kernel: xen: --> pirq=22 -> irq=28 (gsi=28)
+[    1.023688] localhost kernel: xen:grant_table: Grant tables using version 1 layout
+[    1.029189] localhost kernel: Grant table initialized
+[    1.033854] localhost kernel: Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    1.067333] localhost kernel: 00:06: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    1.074142] localhost kernel: i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f13:PS2M] at 0x60,0x64 irq 1,12
+[    1.082426] localhost kernel: serio: i8042 KBD port at 0x60,0x64 irq 1
+[    1.086410] localhost kernel: serio: i8042 AUX port at 0x60,0x64 irq 12
+[    1.090701] localhost kernel: rtc_cmos 00:02: rtc core: registered rtc_cmos as rtc0
+[    1.095573] localhost kernel: rtc_cmos 00:02: alarms up to one day, 114 bytes nvram, hpet irqs
+[    1.102103] localhost kernel: TCP: cubic registered
+[    1.105810] localhost kernel: NET: Registered protocol family 10
+[    1.110418] localhost kernel: input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input0
+[    1.117662] localhost kernel: NET: Registered protocol family 17
+[    1.122073] localhost kernel: Loading compiled-in X.509 certificates
+[    1.127072] localhost kernel: Loaded X.509 cert 'Magrathea: Glacier signing key: e84267f58554a7567beab6e115cb000d88d7f485'
+[    1.137310] localhost kernel: registered taskstats version 1
+[    1.141662] localhost kernel: xenbus_probe_frontend: Device with no driver: device/vfb/0
+[    1.148213] localhost kernel: xenbus_probe_frontend: Device with no driver: device/vbd/51712
+[    1.154383] localhost kernel: xenbus_probe_frontend: Device with no driver: device/vif/0
+[    1.160308] localhost kernel: rtc_cmos 00:02: setting system clock to 2015-04-30 11:59:56 UTC (1430395196)
+[    1.172336] localhost kernel: Freeing unused kernel memory: 22240K (ffffffff81ae6000 - ffffffff8309e000)
+[    1.179712] localhost kernel: Write protecting the kernel read-only data: 10240k
+[    1.184846] localhost kernel: Freeing unused kernel memory: 936K (ffff880001516000 - ffff880001600000)
+[    1.191411] localhost kernel: Freeing unused kernel memory: 1764K (ffff880001847000 - ffff880001a00000)
+[    1.200305] localhost systemd[1]: Inserted module 'autofs4'
+[    1.204887] localhost kernel: random: systemd urandom read with 32 bits of entropy available
+[    1.211252] localhost systemd[1]: systemd 219 running in system mode. (-PAM -AUDIT -SELINUX +IMA -APPARMOR +SMACK -SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT -GNUTLS -ACL +XZ -LZ4 +SECCOMP +BLKID -ELFUTILS +KMOD -IDN)
+[    1.224905] localhost systemd[1]: Detected virtualization 'xen'.
+[    1.228973] localhost systemd[1]: Detected architecture 'x86-64'.
+[    1.241486] localhost systemd[1]: Running in initial RAM disk.
+[    1.254865] localhost systemd[1]: No hostname configured.
+[    1.258989] localhost systemd[1]: Set hostname to <localhost>.
+[    1.263260] localhost systemd[1]: Initializing machine ID from random generator.
+[    1.294767] localhost systemd[1]: Unit type .busname is not supported on this system.
+[    1.306921] localhost systemd[1]: Reached target Swap.
+[    1.311154] localhost systemd[1]: Starting Swap.
+[    1.315046] localhost systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[    1.322317] localhost systemd[1]: Starting Dispatch Password Requests to Console Directory Watch.
+[    1.333306] localhost systemd[1]: Reached target Local File Systems.
+[    1.338112] localhost systemd[1]: Starting Local File Systems.
+[    1.346649] localhost systemd[1]: Created slice -.slice.
+[    1.350920] localhost systemd[1]: Starting -.slice.
+[    1.358976] localhost systemd[1]: Listening on udev Control Socket.
+[    1.363647] localhost systemd[1]: Starting udev Control Socket.
+[    1.372680] localhost systemd[1]: Listening on udev Kernel Socket.
+[    1.377376] localhost systemd[1]: Starting udev Kernel Socket.
+[    1.401796] localhost systemd[1]: Listening on Journal Socket.
+[    1.406246] localhost systemd[1]: Starting Journal Socket.
+[    1.411027] localhost systemd[1]: Listening on Journal Audit Socket.
+[    1.420500] localhost systemd[1]: Created slice System Slice.
+[    1.425271] localhost systemd[1]: Starting System Slice.
+[    1.434094] localhost systemd[1]: Created slice system-systemd\x2dfsck.slice.
+[    1.442011] localhost systemd[1]: Starting system-systemd\x2dfsck.slice.
+[    1.450413] localhost systemd[1]: Starting Create list of required static device nodes for the current kernel...
+[    1.464776] localhost systemd[1]: Started Load Kernel Modules.
+[    1.474383] localhost systemd[1]: Reached target Slices.
+[    1.481558] localhost systemd[1]: Starting Slices.
+[    1.491349] localhost systemd[1]: Reached target Paths.
+[    1.497039] localhost systemd[1]: Starting Paths.
+[    1.507549] localhost systemd[1]: Reached target Timers.
+[    1.513074] localhost systemd[1]: Starting Timers.
+[    1.518705] localhost systemd[1]: Started dracut ask for additional cmdline parameters.
+[    1.527516] localhost systemd[1]: Starting dracut cmdline hook...
+[    1.541761] localhost systemd[1]: Reached target Encrypted Volumes.
+[    1.548618] localhost systemd[1]: Starting Encrypted Volumes.
+[    1.572829] localhost systemd[1]: Starting Apply Kernel Variables...
+[    1.588856] localhost systemd[1]: Listening on Journal Socket (/dev/log).
+[    1.594955] localhost systemd[1]: Starting Journal Socket (/dev/log).
+[    1.606607] localhost systemd[1]: Reached target Sockets.
+[    1.611498] localhost systemd[1]: Starting Sockets.
+[    1.617575] localhost systemd[1]: Starting Journal Service...
+[    1.630564] localhost systemd-journal[158]: Journal started
+[    1.630785] localhost dracut-cmdline[96]: dracut-dracut-041-r2
+[    1.630867] localhost dracut-cmdline[96]: Using kernel command line parameters:
+[    1.641682] localhost systemd[1]: Started Journal Service.
+[    1.652509] localhost systemd[1]: Started Create list of required static device nodes for the current kernel.
+[    1.656710] localhost systemd[1]: Started dracut cmdline hook.
+[    1.661022] localhost systemd[1]: Started Apply Kernel Variables.
+[    1.670815] localhost systemd[1]: Starting dracut pre-udev hook...
+[    1.670908] localhost systemd[1]: Starting Create Static Device Nodes in /dev...
+[    1.680171] localhost systemd[1]: Started Create Static Device Nodes in /dev.
+[    1.691479] localhost systemd[1]: Started dracut pre-udev hook.
+[    1.695183] localhost systemd[1]: Starting udev Kernel Device Manager...
+[    1.695281] localhost systemd-udevd[191]: starting version 219
+[    1.695376] localhost systemd-udevd[191]: specified group 'tty' unknown
+[    1.695466] localhost systemd-udevd[191]: specified group 'uucp' unknown
+[    1.695548] localhost systemd-udevd[191]: specified group 'kmem' unknown
+[    1.695633] localhost systemd-udevd[191]: specified group 'input' unknown
+[    1.695708] localhost systemd-udevd[191]: specified group 'video' unknown
+[    1.695786] localhost systemd-udevd[191]: specified group 'audio' unknown
+[    1.695865] localhost systemd-udevd[191]: specified group 'lp' unknown
+[    1.695944] localhost systemd-udevd[191]: specified group 'disk' unknown
+[    1.696024] localhost systemd-udevd[191]: RUN{builtin}: 'uaccess' unknown /usr/lib64/udev/rules.d/73-seat-late.rules:15
+[    1.699977] localhost systemd[1]: Started udev Kernel Device Manager.
+[    1.704168] localhost systemd[1]: Starting dracut pre-trigger hook...
+[    1.712335] localhost dracut-pre-trigger[193]: rd.md=0: removing MD RAID activation
+[    1.737745] localhost systemd[1]: Started dracut pre-trigger hook.
+[    1.743051] localhost systemd[1]: Starting udev Coldplug all Devices...
+[    1.743166] localhost systemd-udevd[191]: specified group 'tty' unknown
+[    1.743266] localhost systemd-udevd[191]: specified group 'uucp' unknown
+[    1.743358] localhost systemd-udevd[191]: specified group 'kmem' unknown
+[    1.743446] localhost systemd-udevd[191]: specified group 'input' unknown
+[    1.743527] localhost systemd-udevd[191]: specified group 'video' unknown
+[    1.743614] localhost systemd-udevd[191]: specified group 'audio' unknown
+[    1.743695] localhost systemd-udevd[191]: specified group 'lp' unknown
+[    1.743771] localhost systemd-udevd[191]: specified group 'disk' unknown
+[    1.743848] localhost systemd-udevd[191]: RUN{builtin}: 'uaccess' unknown /usr/lib64/udev/rules.d/73-seat-late.rules:15
+[    1.754713] localhost systemd[1]: Started udev Coldplug all Devices.
+[    1.755933] localhost systemd[1]: Starting dracut initqueue hook...
+[    1.763742] localhost kernel: input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input2
+[    1.763745] localhost kernel: ACPI: Power Button [PWRF]
+[    1.765162] localhost kernel: input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input3
+[    1.765164] localhost kernel: ACPI: Sleep Button [SLPF]
+[    1.787126] localhost systemd[1]: Reached target System Initialization.
+[    1.787270] localhost systemd[1]: Starting System Initialization.
+[    1.791696] localhost systemd[1]: Reached target Basic System.
+[    1.791826] localhost systemd[1]: Starting Basic System.
+[    1.826991] localhost kernel: piix4_smbus 0000:00:01.3: SMBus base address uninitialized - upgrade BIOS or use force_addr=0xaddr
+[    1.839103] localhost kernel: SCSI subsystem initialized
+[    1.848221] localhost kernel: libata version 3.00 loaded.
+[    1.852195] localhost kernel: microcode: CPU0 sig=0x306e4, pf=0x1, revision=0x416
+[    1.859089] localhost kernel: microcode: CPU1 sig=0x306e4, pf=0x1, revision=0x416
+[    1.866440] localhost kernel: microcode: Microcode Update Driver: v2.00 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
+[    1.868697] localhost kernel: input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input4
+[    1.883025] localhost kernel: xen_netfront: Initialising Xen virtual ethernet driver
+[    1.900779] localhost kernel: ata_piix 0000:00:01.1: version 2.13
+[    1.905818] localhost kernel: scsi host0: ata_piix
+[    1.911675] localhost kernel: AVX version of gcm_enc/dec engaged.
+[    1.912080] localhost kernel: scsi host1: ata_piix
+[    1.912114] localhost kernel: ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xc100 irq 14
+[    1.912115] localhost kernel: ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xc108 irq 15
+[    1.935854] localhost kernel: AES CTR mode by8 optimization enabled
+[    1.941088] localhost kernel: tsc: Refined TSC clocksource calibration: 2499.999 MHz
+[    1.946898] localhost kernel: mousedev: PS/2 mouse device common for all mice
+[    1.949269] localhost kernel: alg: No test for __gcm-aes-aesni (__driver-gcm-aes-aesni)
+[    2.011853] localhost kernel: blkfront: xvda: barrier or flush: disabled; persistent grants: disabled; indirect descriptors: enabled;
+[    2.019990] localhost kernel: Console: switching to colour frame buffer device 100x37
+[    2.021956] localhost kernel:  xvda: xvda1 xvda2 xvda3 xvda4 xvda6 xvda7 xvda9
+[    2.252093] localhost kernel: random: nonblocking pool is initialized
+[    2.418774] localhost systemd[1]: Found device /dev/disk/by-partuuid/7130c94a-213a-4e5a-8e26-6cce9662f132.
+[    2.419286] localhost systemd[1]: Starting File System Check on /dev/disk/by-partuuid/7130c94a-213a-4e5a-8e26-6cce9662f132...
+[    2.435334] localhost systemd[1]: Found device /dev/disk/by-label/ROOT.
+[    2.435932] localhost systemd[1]: Starting File System Check on /dev/disk/by-label/ROOT...
+[    2.493175] localhost systemd-fsck[284]: /dev/xvda3 has unsupported feature(s): FEATURE_R24 FEATURE_R25 FEATURE_R26 FEATURE_R27 FEATURE_R28 FEATURE_R29 FEATURE_R30 FEATURE_R31
+[    2.493317] localhost systemd-fsck[284]: e2fsck: Get a newer version of e2fsck!
+[    2.493398] localhost systemd-fsck[284]: fsck failed with error code 8.
+[    2.493476] localhost systemd-fsck[284]: Ignoring error.
+[    2.494446] localhost systemd[1]: Started File System Check on /dev/disk/by-partuuid/7130c94a-213a-4e5a-8e26-6cce9662f132.
+[    2.509619] localhost systemd-fsck[286]: ROOT: clean, 50990/3322752 files, 230193/3324923 blocks
+[    2.512862] localhost systemd[1]: Started File System Check on /dev/disk/by-label/ROOT.
+[    7.148162] localhost kernel: xenbus_probe_frontend: Waiting for devices to initialise: 25s...20s...15s...10s...5s...0s...
+[   32.055367] localhost kernel: 
+[   32.057155] localhost kernel: xenbus_probe_frontend: Timeout connecting to device: device/vfb/0 (local state 3, remote state 1)
+[   32.065836] localhost systemd[1]: Started dracut initqueue hook.
+[   32.067358] localhost systemd[1]: Reached target Remote File Systems (Pre).
+[   32.067442] localhost systemd[1]: Starting Remote File Systems (Pre).
+[   32.068166] localhost systemd[1]: Reached target Remote File Systems.
+[   32.068249] localhost systemd[1]: Starting Remote File Systems.
+[   32.069817] localhost systemd[1]: Starting dracut pre-mount hook...
+[   32.078897] localhost systemd[1]: Started dracut pre-mount hook.
+[   32.079260] localhost systemd[1]: Mounting /sysroot...
+[   32.140949] localhost kernel: EXT4-fs (xvda9): mounted filesystem with ordered data mode. Opts: (null)
+[   32.146983] localhost systemd[1]: Mounted /sysroot.
+[   32.159351] localhost systemd[1]: Mounting /sysroot/usr...
+[   32.192266] localhost kernel: EXT4-fs (xvda3): mounted filesystem without journal. Opts: (null)
+[   32.197878] localhost systemd[1]: Mounted /sysroot/usr.
+[   32.199465] localhost systemd[1]: Reached target Initrd Root File System.
+[   32.199558] localhost systemd[1]: Starting Initrd Root File System.
+[   32.200728] localhost systemd[1]: Starting Reload Configuration from the Real Root...
+[   32.201708] localhost systemd[1]: Reloading.
+[   32.221551] localhost systemd[1]: Unit type .busname is not supported on this system.
+[   32.239300] localhost systemd[1]: Started Reload Configuration from the Real Root.
+[   32.239396] localhost systemd[1]: Started dracut mount hook.
+[   32.240151] localhost systemd[1]: Reached target Initrd File Systems.
+[   32.240249] localhost systemd[1]: Starting Initrd File Systems.
+[   32.240908] localhost systemd[1]: Reached target Initrd Default Target.
+[   32.240996] localhost systemd[1]: Starting Initrd Default Target.
+[   32.243171] localhost systemd[1]: Starting dracut pre-pivot and cleanup hook...
+[   32.255153] localhost kernel: EXT4-fs (xvda9): re-mounted. Opts: data=ordered
+[   32.418535] localhost systemd[1]: Started dracut pre-pivot and cleanup hook.
+[   32.419820] localhost systemd[1]: Starting Cleaning Up and Shutting Down Daemons...
+[   32.423885] localhost systemd[1]: Stopped Cleaning Up and Shutting Down Daemons.
+[   32.425659] localhost systemd[1]: Stopped target Timers.
+[   32.425769] localhost systemd[1]: Stopping Timers.
+[   32.426555] localhost systemd[1]: Stopped dracut pre-pivot and cleanup hook.
+[   32.426640] localhost systemd[1]: Stopping dracut pre-pivot and cleanup hook...
+[   32.428105] localhost systemd[1]: Stopped dracut pre-mount hook.
+[   32.428184] localhost systemd[1]: Stopping dracut pre-mount hook...
+[   32.429414] localhost systemd[1]: Stopped target Remote File Systems.
+[   32.429492] localhost systemd[1]: Stopping Remote File Systems.
+[   32.430085] localhost systemd[1]: Stopped target Remote File Systems (Pre).
+[   32.430166] localhost systemd[1]: Stopping Remote File Systems (Pre).
+[   32.430742] localhost systemd[1]: Stopped target Initrd Default Target.
+[   32.430816] localhost systemd[1]: Stopping Initrd Default Target.
+[   32.431355] localhost systemd[1]: Stopped target Basic System.
+[   32.431433] localhost systemd[1]: Stopping Basic System.
+[   32.431970] localhost systemd[1]: Stopped target Paths.
+[   32.432064] localhost systemd[1]: Stopping Paths.
+[   32.432144] localhost systemd[1]: Stopped Dispatch Password Requests to Console Directory Watch.
+[   32.432221] localhost systemd[1]: Stopping Dispatch Password Requests to Console Directory Watch.
+[   32.432598] localhost systemd[1]: Stopped target System Initialization.
+[   32.432675] localhost systemd[1]: Stopping System Initialization.
+[   32.433165] localhost systemd[1]: Stopped target Swap.
+[   32.433247] localhost systemd[1]: Stopping Swap.
+[   32.433696] localhost systemd[1]: Stopped target Slices.
+[   32.433773] localhost systemd[1]: Stopping Slices.
+[   32.434234] localhost systemd[1]: Stopped target Local File Systems.
+[   32.434318] localhost systemd[1]: Stopping Local File Systems.
+[   32.434923] localhost systemd[1]: Stopped Apply Kernel Variables.
+[   32.435012] localhost systemd[1]: Stopping Apply Kernel Variables...
+[   32.436035] localhost systemd[1]: Stopped dracut initqueue hook.
+[   32.436135] localhost systemd[1]: Stopping dracut initqueue hook...
+[   32.437245] localhost systemd[1]: Stopped udev Coldplug all Devices.
+[   32.437322] localhost systemd[1]: Stopping udev Coldplug all Devices...
+[   32.438451] localhost systemd[1]: Stopped dracut pre-trigger hook.
+[   32.438534] localhost systemd[1]: Stopping dracut pre-trigger hook...
+[   32.440493] localhost systemd[1]: Stopping udev Kernel Device Manager...
+[   32.440769] localhost systemd[1]: Stopped target Sockets.
+[   32.440851] localhost systemd[1]: Stopping Sockets.
+[   32.440934] localhost systemd[1]: Listening on Journal Audit Socket.
+[   32.441270] localhost systemd[1]: Stopped target Encrypted Volumes.
+[   32.441358] localhost systemd[1]: Stopping Encrypted Volumes.
+[   32.446184] localhost systemd[1]: Stopped udev Kernel Device Manager.
+[   32.447223] localhost systemd[1]: Stopped dracut pre-udev hook.
+[   32.447312] localhost systemd[1]: Stopping dracut pre-udev hook...
+[   32.448227] localhost systemd[1]: Stopped dracut cmdline hook.
+[   32.448307] localhost systemd[1]: Stopping dracut cmdline hook...
+[   32.449262] localhost systemd[1]: Stopped Create Static Device Nodes in /dev.
+[   32.449344] localhost systemd[1]: Stopping Create Static Device Nodes in /dev...
+[   32.450323] localhost systemd[1]: Stopped Create list of required static device nodes for the current kernel.
+[   32.450403] localhost systemd[1]: Stopping Create list of required static device nodes for the current kernel...
+[   32.451263] localhost systemd[1]: Closed udev Control Socket.
+[   32.451350] localhost systemd[1]: Stopping udev Control Socket.
+[   32.451725] localhost systemd[1]: Closed udev Kernel Socket.
+[   32.451802] localhost systemd[1]: Stopping udev Kernel Socket.
+[   32.453142] localhost systemd[1]: Starting Cleanup udevd DB...
+[   32.454289] localhost systemd[1]: Started Cleanup udevd DB.
+[   32.454950] localhost systemd[1]: Reached target Switch Root.
+[   32.455114] localhost systemd[1]: Starting Switch Root.
+[   32.456208] localhost systemd[1]: Starting Switch Root...
+[   32.476636] localhost systemd[1]: Switching root.
+[   32.483259] localhost unknown[158]: Journal stopped
+[   34.630322] localhost systemd-journal[405]: Runtime journal is using 8.0M (max allowed 197.7M, trying to leave 296.6M free of 1.9G available → current limit 197.7M).
+[   34.761925] localhost systemd-journal[405]: Permanent journal is using 8.0M (max allowed 1.2G, trying to leave 1.8G free of 11.2G available → current limit 1.2G).
+[   35.030860] localhost systemd-journal[405]: Time spent on flushing to /var is 268.796ms for 602 entries.
+[   32.479292] localhost systemd-journald[158]: Received SIGTERM from PID 1 (systemd).
+[   35.031221] localhost systemd-journal[405]: Journal started
+[   35.032148] localhost systemd[1]: systemd 219 running in system mode. (-PAM -AUDIT -SELINUX +IMA -APPARMOR +SMACK -SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT -GNUTLS -ACL +XZ -LZ4 +SECCOMP +BLKID -ELFUTILS +KMOD -IDN)
+[   35.032292] localhost systemd[1]: Detected virtualization 'xen'.
+[   35.032405] localhost systemd[1]: Detected architecture 'x86-64'.
+[   35.032502] localhost systemd[1]: Set hostname to <ip-10-0-21-149.eu-west-1.compute.internal>.
+[   35.032680] localhost systemd[1]: Unit type .busname is not supported on this system.
+[   35.032774] localhost systemd[1]: Cannot add dependency job for unit org.freedesktop.resolve1.busname, ignoring: Unit org.freedesktop.resolve1.busname failed to load: No such file or directory.
+[   35.032890] localhost systemd-udevd[425]: starting version 219
+[   35.032985] localhost systemd[1]: Starting Flush Journal to Persistent Storage...
+[   35.171324] localhost systemd-udevd[425]: RUN{builtin}: 'uaccess' unknown /usr/lib64/udev/rules.d/73-seat-late.rules:15
+[   35.172932] localhost systemd[1]: Started Flush Journal to Persistent Storage.
+[   35.221194] localhost systemd[1]: Started udev Kernel Device Manager.
+[   35.221354] localhost systemd[1]: Started udev Wait for Complete Device Initialization.
+[   35.222112] localhost systemd[1]: Starting Activation of LVM2 logical volumes...
+[   35.283557] localhost systemd[1]: Found device /dev/ttyS0.
+[   35.423665] localhost lvm[441]: No volume groups found
+[   35.424849] localhost systemd[1]: Started Activation of LVM2 logical volumes.
+[   35.425514] localhost systemd[1]: Reached target Encrypted Volumes.
+[   35.425641] localhost systemd[1]: Starting Encrypted Volumes.
+[   35.427674] localhost systemd[1]: Starting Activation of LVM2 logical volumes...
+[   35.437320] localhost systemd[1]: Found device /dev/hvc0.
+[   35.490835] localhost lvm[443]: No volume groups found
+[   35.492181] localhost systemd[1]: Started Activation of LVM2 logical volumes.
+[   35.494337] localhost systemd[1]: Starting Activation of LVM2 logical volumes...
+[   38.463045] localhost systemd[1]: Found device /dev/disk/by-label/OEM.
+[   38.482831] localhost systemd[1]: Mounting /usr/share/oem...
+[   38.488861] localhost kernel: EXT4-fs (xvda6): mounted filesystem with ordered data mode. Opts: commit=600
+[   38.494835] localhost systemd[1]: Mounted /usr/share/oem.
+[   38.495707] localhost systemd[1]: Started Rebuild Dynamic Linker Cache.
+[   38.496404] localhost systemd[1]: Reached target Local File Systems.
+[   38.496560] localhost systemd[1]: Starting Local File Systems.
+[   38.497250] localhost systemd[1]: Starting Create missing system files...
+[   38.497670] localhost systemd[1]: Started Commit a transient machine-id on disk.
+[   38.497797] localhost systemd[1]: Started Rebuild Journal Catalog.
+[   38.498488] localhost systemd[1]: Starting Create Volatile Files and Directories...
+[   38.499656] localhost systemd[1]: Started Update is Completed.
+[   38.511946] localhost systemd[1]: Started Create missing system files.
+[   38.580229] localhost lvm[461]: No volume groups found
+[   38.581808] localhost systemd[1]: Started Activation of LVM2 logical volumes.
+[   38.583223] localhost systemd[1]: Reached target Remote File Systems.
+[   38.583332] localhost systemd[1]: Starting Remote File Systems.
+[   38.861597] localhost systemd[1]: Started Create Volatile Files and Directories.
+[   38.863265] localhost systemd[1]: Starting Clean up broken links in /etc/ssl/certs...
+[   38.864434] localhost systemd[1]: Starting Update UTMP about System Boot/Shutdown...
+[   39.062253] localhost systemd[1]: Started Update UTMP about System Boot/Shutdown.
+[   39.140681] localhost systemd[1]: Started Clean up broken links in /etc/ssl/certs.
+[   39.141419] localhost systemd[1]: Started Update CA bundle at /etc/ssl/certs/ca-certificates.crt.
+[   39.142157] localhost systemd[1]: Reached target System Initialization.
+[   39.142272] localhost systemd[1]: Starting System Initialization.
+[   39.142372] localhost systemd[1]: Started Generate /run/coreos/motd.
+[   39.211704] localhost systemd[1]: Starting Generate /run/coreos/motd.
+[   39.221261] localhost systemd[1]: Listening on OpenSSH Server Socket.
+[   39.221380] localhost systemd[1]: Starting OpenSSH Server Socket.
+[   39.221861] localhost systemd[1]: Started Watch for update engine configuration changes.
+[   39.221970] localhost systemd[1]: Starting Watch for update engine configuration changes.
+[   39.222082] localhost systemd[1]: Started Update Engine Stub Timer.
+[   39.222184] localhost systemd[1]: Started Watch for a cloud-config at /var/lib/coreos-install/user_data.
+[   39.222285] localhost systemd[1]: Starting Watch for a cloud-config at /var/lib/coreos-install/user_data.
+[   39.222612] localhost systemd[1]: Listening on D-Bus System Message Bus Socket.
+[   39.222709] localhost systemd[1]: Starting D-Bus System Message Bus Socket.
+[   39.222804] localhost systemd[1]: Started Daily Cleanup of Temporary Directories.
+[   39.222896] localhost systemd[1]: Starting Daily Cleanup of Temporary Directories.
+[   39.223865] localhost systemd[1]: Reached target Timers.
+[   39.223973] localhost systemd[1]: Starting Timers.
+[   39.224086] localhost systemd[1]: Starting Docker Socket for the API.
+[   39.224190] localhost systemd[1]: Failed to start Watch for a cloud-config at /media/configdrive.
+[   39.224288] localhost systemd[1]: Dependency failed for Load user-provided cloud configs.
+[   39.224390] localhost systemd[1]: Job user-config.target/start failed with result 'dependency'.
+[   39.224753] localhost systemd[1]: Reached target Paths.
+[   39.224851] localhost systemd[1]: Starting Paths.
+[   39.225808] localhost systemd[1]: Listening on Docker Socket for the API.
+[   39.226521] localhost systemd[1]: Listening on Journal Audit Socket.
+[   39.227135] localhost systemd[1]: Reached target Sockets.
+[   39.227232] localhost systemd[1]: Starting Sockets.
+[   39.227725] localhost systemd[1]: Reached target Basic System.
+[   39.227825] localhost systemd[1]: Starting Basic System.
+[   39.228320] localhost systemd[1]: Started Run Addon /usr/share/oem.
+[   39.230542] localhost systemd[1]: Starting Generate /run/issue...
+[   39.230657] localhost systemd[1]: Starting Install an ssh key from /proc/cmdline...
+[   39.232646] localhost systemd[1]: Started D-Bus System Message Bus.
+[   39.462107] localhost systemd[1]: Starting D-Bus System Message Bus...
+[   39.463124] localhost systemd[1]: Starting Load cloud-config from /usr/share/oem/cloud-config.yml...
+[   39.464558] localhost systemd[1]: Starting Network Service...
+[   39.465844] localhost systemd[1]: Starting Extend Filesystems...
+[   39.466688] localhost systemd[1]: Started Configure Addon /usr/share/oem.
+[   39.466810] localhost systemd[1]: Started Modifies /etc/environment for CoreOS.
+[   39.467515] localhost systemd[1]: Starting Login Service...
+[   39.467819] localhost systemd[1]: Started Load cloud-config from url defined in /proc/cmdline.
+[   39.468591] localhost systemd[1]: Starting Generate sshd host keys...
+[   39.469649] localhost systemd[1]: Starting Update Engine...
+[   39.695523] localhost systemd[1]: Started Network Time Service.
+[   39.695664] localhost systemd[1]: Starting Network Time Service...
+[   39.697700] localhost systemd[1]: Started Generate /run/issue.
+[   39.698709] localhost systemd[1]: Started Install an ssh key from /proc/cmdline.
+[   39.966147] localhost systemd-logind[479]: New seat seat0.
+[   39.967889] localhost systemd[1]: Started Login Service.
+[   40.018034] localhost systemd-logind[479]: Watching system buttons on /dev/input/event1 (Power Button)
+[   40.018175] localhost systemd-logind[479]: Watching system buttons on /dev/input/event2 (Sleep Button)
+[   40.289644] localhost systemd-networkd[477]: Enumeration completed
+[   40.363256] localhost systemd[1]: Started Network Service.
+[   40.363387] localhost systemd[1]: Reached target Network.
+[   40.363490] localhost systemd[1]: Starting Network.
+[   40.363600] localhost systemd[1]: Starting Network Name Resolution...
+[   40.363714] localhost systemd-networkd[477]: lo              : link configured
+[   40.363817] localhost systemd-networkd[477]: eth0            : gained carrier
+[   40.363919] localhost systemd-networkd[477]: eth0            : DHCPv4 address 10.0.21.149/24 via 10.0.21.1
+[   40.364016] localhost systemd-networkd[477]: eth0            : link configured
+[   40.364174] localhost dbus[473]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service'
+[   40.422574] localhost systemd[1]: Starting Hostname Service...
+[   40.683889] localhost systemd-resolved[490]: Using system hostname 'ip-10-0-21-149.eu-west-1.compute.internal'.
+[   40.743742] localhost ntpd[486]: ntpd 4.2.8@1.3265-o Wed Apr 22 23:18:26 UTC 2015 (1): Starting
+[   40.745280] localhost systemd[1]: Started Extend Filesystems.
+[   40.792796] localhost dbus[473]: [system] Successfully activated service 'org.freedesktop.hostname1'
+[   40.793422] localhost systemd[1]: Started Hostname Service.
+[   40.793751] localhost dbus[473]: [system] Activating via systemd: service name='org.freedesktop.PolicyKit1' unit='polkit.service'
+[   40.823527] localhost ntpd[486]: 30 Apr 12:00:36 ntpd[486]: ntpd 4.2.8@1.3265-o Wed Apr 22 23:18:26 UTC 2015 (1): Starting
+[   40.823640] localhost ntpd[486]: 30 Apr 12:00:36 ntpd[486]: Command line: /usr/sbin/ntpd -g -n -f /var/lib/ntp/ntp.drift -u ntp:ntp
+[   40.823742] localhost ntpd[486]: Command line: /usr/sbin/ntpd -g -n -f /var/lib/ntp/ntp.drift -u ntp:ntp
+[   40.827310] localhost systemd[1]: Started Network Name Resolution.
+[   40.828268] localhost systemd[1]: Starting Authorization Manager...
+[   40.998426] localhost ntpd[486]: proto: precision = 0.139 usec (-23)
+[   40.998579] localhost ntpd[486]: 30 Apr 12:00:36 ntpd[486]: proto: precision = 0.139 usec (-23)
+[   41.084405] localhost ntpd[486]: Listen and drop on 0 v6wildcard [::]:123
+[   41.084544] localhost ntpd[486]: Listen and drop on 1 v4wildcard 0.0.0.0:123
+[   41.084650] localhost ntpd[486]: Listen normally on 2 lo 127.0.0.1:123
+[   41.084784] localhost ntpd[486]: Listen normally on 3 eth0 10.0.21.149:123
+[   41.084881] localhost ntpd[486]: Listen normally on 4 lo [::1]:123
+[   41.084978] localhost ntpd[486]: bind(21) AF_INET6 fe80::83a:53ff:fecc:94a8%2%2#123 flags 0x11 failed: Cannot assign requested address
+[   41.085107] localhost ntpd[486]: unable to create socket on eth0 (5) for fe80::83a:53ff:fecc:94a8%2#123
+[   41.085205] localhost ntpd[486]: failed to init interface for address fe80::83a:53ff:fecc:94a8%2
+[   41.085295] localhost ntpd[486]: Listening on routing socket on fd #21 for interface updates
+[   41.085410] localhost ntpd[486]: 30 Apr 12:00:36 ntpd[486]: Listen and drop on 0 v6wildcard [::]:123
+[   41.085504] localhost ntpd[486]: 30 Apr 12:00:36 ntpd[486]: Listen and drop on 1 v4wildcard 0.0.0.0:123
+[   41.085632] localhost ntpd[486]: 30 Apr 12:00:36 ntpd[486]: Listen normally on 2 lo 127.0.0.1:123
+[   41.085717] localhost ntpd[486]: 30 Apr 12:00:36 ntpd[486]: Listen normally on 3 eth0 10.0.21.149:123
+[   41.085801] localhost ntpd[486]: 30 Apr 12:00:36 ntpd[486]: Listen normally on 4 lo [::1]:123
+[   41.085895] localhost ntpd[486]: 30 Apr 12:00:36 ntpd[486]: bind(21) AF_INET6 fe80::83a:53ff:fecc:94a8%2%2#123 flags 0x11 failed: Cannot assign requested address
+[   41.085983] localhost ntpd[486]: 30 Apr 12:00:36 ntpd[486]: unable to create socket on eth0 (5) for fe80::83a:53ff:fecc:94a8%2#123
+[   41.086142] localhost ntpd[486]: 30 Apr 12:00:36 ntpd[486]: failed to init interface for address fe80::83a:53ff:fecc:94a8%2
+[   41.086253] localhost ntpd[486]: 30 Apr 12:00:36 ntpd[486]: Listening on routing socket on fd #21 for interface updates
+[   41.267521] localhost systemd[1]: Started Generate sshd host keys.
+[   41.282897] localhost systemd[1]: Created slice system-sshd.slice.
+[   41.283164] localhost systemd[1]: Starting system-sshd.slice.
+[   41.283793] localhost systemd[1]: Started OpenSSH per-connection server daemon (212.204.94.154:51303).
+[   41.283898] localhost systemd[1]: Starting OpenSSH per-connection server daemon (212.204.94.154:51303)...
+[   42.072193] localhost systemd[1]: Time has been changed
+[   42.192180] localhost coreos-cloudinit[476]: Checking availability of "local-file"
+[   42.192325] localhost coreos-cloudinit[476]: Fetching user-data from datasource of type "local-file"
+[   42.220085] localhost coreos-cloudinit[476]: Fetching meta-data from datasource of type "local-file"
+[   42.221140] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Parsing user-data as cloud-config
+[   42.221311] localhost coreos-cloudinit[476]: Merging cloud-config from meta-data and user-data
+[   42.221435] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Writing file to "/etc/oem-release"
+[   42.257916] localhost update_engine[481]: [0430/120038:INFO:main.cc(157)] CoreOS Update Engine starting
+[   42.260977] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Wrote file to "/etc/oem-release"
+[   42.261081] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Wrote file /etc/oem-release to filesystem
+[   42.261232] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Writing drop-in unit "10-oem.conf" to filesystem
+[   42.261325] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Writing file to "/run/systemd/system/etcd.service.d/10-oem.conf"
+[   42.261414] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Wrote file to "/run/systemd/system/etcd.service.d/10-oem.conf"
+[   42.261507] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Wrote drop-in unit "10-oem.conf"
+[   42.261598] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Ensuring runtime unit file "etcd.service" is unmasked
+[   42.261688] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Writing drop-in unit "10-oem.conf" to filesystem
+[   42.261780] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Writing file to "/run/systemd/system/etcd2.service.d/10-oem.conf"
+[   42.261867] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Wrote file to "/run/systemd/system/etcd2.service.d/10-oem.conf"
+[   42.261953] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Wrote drop-in unit "10-oem.conf"
+[   42.262075] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Ensuring runtime unit file "etcd2.service" is unmasked
+[   42.262165] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Masking unit file "user-configdrive.service"
+[   42.262267] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Masking unit file "user-configvirtfs.service"
+[   42.262357] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Writing unit "oem-cloudinit.service" to filesystem
+[   42.262447] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Writing file to "/run/systemd/system/oem-cloudinit.service"
+[   42.262537] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Wrote file to "/run/systemd/system/oem-cloudinit.service"
+[   42.262630] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Wrote unit "oem-cloudinit.service"
+[   42.262719] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Ensuring runtime unit file "oem-cloudinit.service" is unmasked
+[   42.262814] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 /run/systemd/system/oem-cloudinit.service is not null or empty, refusing to unmask
+[   42.262900] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Ensuring runtime unit file "etcd.service" is unmasked
+[   42.262989] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Ensuring runtime unit file "etcd2.service" is unmasked
+[   42.263093] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Ensuring runtime unit file "fleet.service" is unmasked
+[   42.263189] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Ensuring runtime unit file "locksmithd.service" is unmasked
+[   42.331378] localhost systemd[1]: Reloading.
+[   42.346231] localhost systemd[1]: Unit type .busname is not supported on this system.
+[   42.359998] localhost systemd[1]: Started Update Engine.
+[   42.361716] localhost coreos-cloudinit[476]: 2015/04/30 12:00:38 Calling unit command "restart" on "oem-cloudinit.service"'
+[   42.362279] localhost update_engine[481]: [0430/120038:INFO:update_check_scheduler.cc(82)] Next update check in 4m4s
+[   42.365161] localhost polkitd[498]: Started polkitd version 0.112
+[   42.389798] localhost systemd[1]: Starting Cluster reboot manager...
+[   42.400507] localhost systemd[1]: Starting Cloudinit from EC2-style metadata...
+[   42.402524] localhost coreos-cloudinit[529]: Checking availability of "cloud-drive"
+[   42.402635] localhost coreos-cloudinit[529]: Checking availability of "ec2-metadata-service"
+[   42.403996] localhost coreos-cloudinit[529]: Fetching user-data from datasource of type "ec2-metadata-service"
+[   42.404164] localhost coreos-cloudinit[529]: 2015/04/30 12:00:38 Fetching data from http://169.254.169.254/2009-04-04/user-data. Attempt #1
+[   42.483012] localhost coreos-cloudinit[529]: line 52: warning: unrecognized key "locksmithd"
+[   42.483159] localhost coreos-cloudinit[529]: Fetching meta-data from datasource of type "ec2-metadata-service"
+[   42.483322] localhost coreos-cloudinit[529]: 2015/04/30 12:00:38 Fetching data from http://169.254.169.254/2009-04-04/meta-data/public-keys. Attempt #1
+[   42.485130] localhost coreos-cloudinit[529]: 2015/04/30 12:00:38 Fetching data from http://169.254.169.254/2009-04-04/meta-data/public-keys/0/openssh-key. Attempt #1
+[   42.486064] localhost coreos-cloudinit[529]: Found SSH key for "aws-ec2-toni"
+[   42.486177] localhost coreos-cloudinit[529]: 2015/04/30 12:00:38 Fetching data from http://169.254.169.254/2009-04-04/meta-data/hostname. Attempt #1
+[   42.487301] localhost coreos-cloudinit[529]: 2015/04/30 12:00:38 Fetching data from http://169.254.169.254/2009-04-04/meta-data/local-ipv4. Attempt #1
+[   42.488198] localhost coreos-cloudinit[529]: 2015/04/30 12:00:38 Fetching data from http://169.254.169.254/2009-04-04/meta-data/public-ipv4. Attempt #1
+[   42.493492] localhost coreos-cloudinit[529]: 2015/04/30 12:00:38 Parsing user-data as cloud-config
+[   42.493971] localhost coreos-cloudinit[529]: Merging cloud-config from meta-data and user-data
+[   42.584916] localhost coreos-cloudinit[529]: 2015/04/30 12:00:38 Set hostname to ip-10-0-21-149.eu-west-1.compute.internal
+[   42.702047] localhost polkitd[498]: Loading rules from directory /etc/polkit-1/rules.d
+[   42.702615] localhost polkitd[498]: Loading rules from directory /usr/share/polkit-1/rules.d
+[   42.726086] localhost polkitd[498]: Finished loading, compiling and executing 2 rules
+[   42.726672] localhost dbus[473]: [system] Successfully activated service 'org.freedesktop.PolicyKit1'
+[   42.727420] localhost systemd[1]: Started Authorization Manager.
+[   42.798286] localhost polkitd[498]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+[   42.798416] localhost systemd-hostnamed[494]: Changed host name to 'ip-10-0-21-149'
+[   42.863131] localhost coreos-cloudinit[529]: 2015/04/30 12:00:38 Authorized SSH keys for core user
+[   42.863694] localhost coreos-cloudinit[529]: 2015/04/30 12:00:38 Writing file to "/etc/aws.conf"
+[   42.865196] localhost coreos-cloudinit[529]: 2015/04/30 12:00:38 Wrote file to "/etc/aws.conf"
+[   42.865296] localhost coreos-cloudinit[529]: 2015/04/30 12:00:38 Wrote file /etc/aws.conf to filesystem
+[   42.865393] localhost coreos-cloudinit[529]: 2015/04/30 12:00:38 Writing file to "/opt/bin/consume-tokens.sh"
+[   42.918365] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file to "/opt/bin/consume-tokens.sh"
+[   42.918489] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file /opt/bin/consume-tokens.sh to filesystem
+[   42.918590] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing file to "/etc/coreos/update.conf"
+[   42.918694] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file to "/etc/coreos/update.conf"
+[   42.918784] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file /etc/coreos/update.conf to filesystem
+[   42.918871] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing file to "/run/flannel/options.env"
+[   42.918957] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file to "/run/flannel/options.env"
+[   42.919064] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file /run/flannel/options.env to filesystem
+[   42.920285] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Updated /etc/environment
+[   42.920409] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing drop-in unit "10-wait-etcd2.conf" to filesystem
+[   42.920496] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing file to "/etc/systemd/system/fleet.service.d/10-wait-etcd2.conf"
+[   42.928462] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file to "/etc/systemd/system/fleet.service.d/10-wait-etcd2.conf"
+[   42.928554] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote drop-in unit "10-wait-etcd2.conf"
+[   42.928640] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing drop-in unit "10-wait-etcd2.conf" to filesystem
+[   42.928737] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing file to "/etc/systemd/system/flanneld.service.d/10-wait-etcd2.conf"
+[   42.928822] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file to "/etc/systemd/system/flanneld.service.d/10-wait-etcd2.conf"
+[   42.928905] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote drop-in unit "10-wait-etcd2.conf"
+[   42.928995] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing drop-in unit "10-wait-etcd2.conf" to filesystem
+[   42.929097] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing file to "/etc/systemd/system/locksmithd.service.d/10-wait-etcd2.conf"
+[   42.929186] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file to "/etc/systemd/system/locksmithd.service.d/10-wait-etcd2.conf"
+[   42.929271] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote drop-in unit "10-wait-etcd2.conf"
+[   42.929354] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing unit "docker.service" to filesystem
+[   42.929437] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing file to "/etc/systemd/system/docker.service"
+[   42.929535] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file to "/etc/systemd/system/docker.service"
+[   42.929623] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote unit "docker.service"
+[   42.929707] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing unit "consume-k8s-tokens.service" to filesystem
+[   42.930237] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing file to "/etc/systemd/system/consume-k8s-tokens.service"
+[   42.933869] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file to "/etc/systemd/system/consume-k8s-tokens.service"
+[   42.933973] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote unit "consume-k8s-tokens.service"
+[   42.934088] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing unit "provision-k8s-secrets.service" to filesystem
+[   42.934178] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing file to "/etc/systemd/system/provision-k8s-secrets.service"
+[   42.934264] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file to "/etc/systemd/system/provision-k8s-secrets.service"
+[   42.934358] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote unit "provision-k8s-secrets.service"
+[   42.934444] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing unit "kubelet.service" to filesystem
+[   42.934532] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing file to "/etc/systemd/system/kubelet.service"
+[   42.934617] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file to "/etc/systemd/system/kubelet.service"
+[   42.934704] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote unit "kubelet.service"
+[   42.934790] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing unit "kube-proxy.service" to filesystem
+[   42.934878] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing file to "/etc/systemd/system/kube-proxy.service"
+[   42.934965] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file to "/etc/systemd/system/kube-proxy.service"
+[   42.935048] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote unit "kube-proxy.service"
+[   42.935197] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Ensuring runtime unit file "etcd.service" is unmasked
+[   42.935285] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing drop-in unit "20-cloudinit.conf" to filesystem
+[   42.935372] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing file to "/run/systemd/system/etcd2.service.d/20-cloudinit.conf"
+[   42.935457] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file to "/run/systemd/system/etcd2.service.d/20-cloudinit.conf"
+[   42.935545] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote drop-in unit "20-cloudinit.conf"
+[   42.935628] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Ensuring runtime unit file "etcd2.service" is unmasked
+[   42.935899] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing drop-in unit "20-cloudinit.conf" to filesystem
+[   42.936004] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Writing file to "/run/systemd/system/fleet.service.d/20-cloudinit.conf"
+[   42.936132] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote file to "/run/systemd/system/fleet.service.d/20-cloudinit.conf"
+[   42.936240] localhost systemd[1]: Reloading.
+[   42.936347] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Wrote drop-in unit "20-cloudinit.conf"
+[   42.936434] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Ensuring runtime unit file "fleet.service" is unmasked
+[   42.936518] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Ensuring runtime unit file "locksmithd.service" is unmasked
+[   42.936606] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Masking unit file "locksmithd.service"
+[   42.946029] localhost systemd[1]: Unit type .busname is not supported on this system.
+[   42.947994] localhost ntpd[486]: Listen normally on 6 eth0 [fe80::83a:53ff:fecc:94a8%2]:123
+[   42.948142] localhost ntpd[486]: 30 Apr 12:00:39 ntpd[486]: Listen normally on 6 eth0 [fe80::83a:53ff:fecc:94a8%2]:123
+[   42.960119] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Calling unit command "start" on "etcd2.service"'
+[   42.969333] localhost systemd[1]: Started etcd2.
+[   42.970380] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Result of "start" on "etcd2.service": done
+[   42.970491] localhost coreos-cloudinit[529]: 2015/04/30 12:00:39 Calling unit command "start" on "fleet.service"'
+[   42.970593] localhost systemd[1]: Starting etcd2...
+[   43.010591] localhost systemd[1]: Listening on fleet.socket.
+[   43.010711] localhost systemd[1]: Starting fleet.socket.
+[   43.011296] localhost systemd[1]: Starting fleet daemon...
+[   43.303315] localhost etcd2[574]: 2015/04/30 12:00:39 WARNING: flag "-peer-election-timeout" is no longer supported - ignoring.
+[   43.318576] localhost etcd2[574]: 2015/04/30 12:00:39 etcd: already initialized as proxy before, starting as etcd proxy...
+[   43.429145] localhost etcd2[574]: 2015/04/30 12:00:39 proxy: using peer urls [http://10.0.21.41:2380] from cluster file .//var/lib/etcd2/proxy/cluster
+[   43.434984] localhost etcd2[574]: 2015/04/30 12:00:39 proxy: listening for client requests on localhost:2379
+[   43.721753] localhost systemd-udevd[425]: RUN{builtin}: 'uaccess' unknown /usr/lib64/udev/rules.d/73-seat-late.rules:15
+[   45.476604] localhost systemd[1]: Assertion 's->type == SERVICE_ONESHOT' failed at /build/amd64-usr/var/tmp/portage/sys-apps/systemd-219-r6/work/systemd-219/src/core/service.c:1524, function service_enter_start(). Aborting.
+[   45.599598] localhost systemd[1]: Caught <ABRT>, dumped core as pid 595.
+[   45.599770] localhost systemd[1]: Freezing execution.
+[   45.590750] localhost kernel: systemd-coredum[596]: segfault at 0 ip 00007fd966ccc157 sp 00007ffd0e5302a0 error 6 in systemd-coredump[7fd966cbc000+16000]
