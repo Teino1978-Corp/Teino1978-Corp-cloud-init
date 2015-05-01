@@ -56,45 +56,15 @@ coreos:
       command: start
     - name: fleet.service
       command: start
-      drop-ins:
-        - name: 10-wait-etcd2.conf
-          content: |
-            [Service]
-            ExecStartPre=/usr/bin/bash -c "until curl -s http://localhost:2379/v2/machines -o /dev/null; do sleep 3; done"
     - name: flanneld.service
       command: start
-      drop-ins:
-        - name: 10-wait-etcd2.conf
-          content: |
-            [Service]
-            ExecStartPre=/usr/bin/bash -c "until curl -s http://localhost:2379/v2/machines -o /dev/null; do sleep 3; done"
-    - name: locksmithd.service
-      drop-ins:
-        - name: 10-wait-etcd2.conf
-          content: |
-            [Service]
-            ExecStartPre=/usr/bin/bash -c "until curl -s http://localhost:2379/v2/machines -o /dev/null; do sleep 3; done"
     - name: docker.service
       command: start
-      content: |
-        [Unit]
-        After=flanneld.service
-        Wants=flanneld.service
-        Description=Docker Application Container Engine
-        Documentation=http://docs.docker.io
-
-        [Service]
-        EnvironmentFile=/var/run/flannel/subnet.env
-        ExecStartPre=/bin/mount --make-rprivate /
-        ExecStart=/usr/bin/docker -d --bip=${FLANNEL_SUBNET} --mtu=${FLANNEL_MTU} -s=overlay -H fd://
-
-        [Install]
-        WantedBy=multi-user.target
     - name: consume-k8s-tokens.service
       command: start
       content: |
         [Unit]
-        Description=Consume Kubernetes API Server token
+        Description=Consume Kubernetes API Server tokens
         Documentation=https://github.com/GoogleCloudPlatform/kubernetes/blob/master/cluster/aws/templates/create-dynamic-salt-files.sh
         [Service]
         ExecStartPre=/usr/bin/bash -c "until etcdctl ls /k8s/tokens/kube_proxy 2>/dev/null; do sleep 3; done"
